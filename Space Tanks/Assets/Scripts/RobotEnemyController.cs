@@ -48,7 +48,7 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
             Task.current.Fail();
             return;
         }
-        GameObject proj = Instantiate(projectile, gunTip.position, gunTip.rotation);
+        GameObject proj = Instantiate(projectile, gunTip.position, transform.rotation);
         proj.GetComponent<EnemyShotController>().damage = damage;
 
         // check if will miss
