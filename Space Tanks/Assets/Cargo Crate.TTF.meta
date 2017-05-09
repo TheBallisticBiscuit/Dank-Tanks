@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ccb5a92971f30624393899360b88f8d8
+timeCreated: 1493873576
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CargoCrate
+  fontNames:
+  - CargoCrate
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

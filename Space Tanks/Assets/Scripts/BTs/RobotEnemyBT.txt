@@ -1,0 +1,20 @@
+tree("Root")
+	fallback
+		tree "MoveToPlayer"
+		tree "Attack"
+
+tree("Attack")
+	sequence
+		Fire
+		Wait 1.0
+
+tree("MoveToPlayer")
+	sequence
+		while 
+			fallback
+				GetMissed
+				not PlayerInSight
+			sequence
+				SetMoveToPlayer
+				Wait 1.5
+				SetMissed(false)
