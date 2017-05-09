@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000001, guid: 22f7eaeefb82e434884adfe9c4765efc,
+  m_LightingDataAsset: {fileID: 112000002, guid: 662f0319183cc1848a5222bd3c8adbad,
     type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -9866,7 +9866,7 @@ MonoBehaviour:
   spawnpointsParent: {fileID: 1922151260}
   robotEnemy: {fileID: 1510244166390064, guid: 3aa9b47490e55e94f839d517359415b5, type: 2}
   baseAmountOfEnemies: 10
-  waveEnemyMultiplier: 5
+  waveEnemyMultiplier: 8
 --- !u!4 &1282302552
 Transform:
   m_ObjectHideFlags: 0

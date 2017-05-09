@@ -68,7 +68,7 @@ public class ArenaSceneController : MonoBehaviour {
                 int remaining = FindObjectsOfType<RobotEnemyController>().Length;
                 ui.UpdateMessage("Wave " + wave + ": " + remaining + " of " +totalEnemies + " remaining");
                 if (remaining < 1) break;
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(1f);
             }
             ui.UpdateMessage("Wave Complete!");
             yield return new WaitForSeconds(4f);

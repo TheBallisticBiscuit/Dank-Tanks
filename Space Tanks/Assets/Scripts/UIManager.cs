@@ -134,9 +134,10 @@ public class UIManager : MonoBehaviour {
     public void ShowDeathMenu()
     {
         deathPanel.SetActive(true);
-        Input.ResetInputAxes();
         hud.SetActive(false);
-        StartCoroutine(DisableInSeconds(2f));
+        menuShown = true;
+        Messenger.Broadcast(GameEvent.GAME_PAUSED);
+        
     }
 
     public void QuitGame()
@@ -144,13 +145,7 @@ public class UIManager : MonoBehaviour {
         Application.Quit();
         Debug.Log("Quitting not supported in editor");
     }
-
-    IEnumerator DisableInSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        Messenger.Broadcast(GameEvent.GAME_PAUSED);
-        menuShown = true;
-    }
+    
     public void DamageFlash()
     {
         screenFlashVisibility = 1f;

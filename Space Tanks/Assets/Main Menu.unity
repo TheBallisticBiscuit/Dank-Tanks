@@ -273,7 +273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: Level 1
+  m_Text: Survive Mode
 --- !u!222 &224128782
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: -108.4}
-  m_SizeDelta: {x: 200, y: 65.399994}
+  m_SizeDelta: {x: 270, y: 65.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1128174900
 MonoBehaviour:
@@ -629,7 +629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: Level 2
+  m_Text: Escape (Unfinished)
 --- !u!222 &1244773198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -990,7 +990,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: 39.6}
-  m_SizeDelta: {x: 200, y: 65.399994}
+  m_SizeDelta: {x: 270, y: 65.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846879742
 MonoBehaviour:
@@ -1040,7 +1040,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Plaza Escape
+          m_StringArgument: Survival Arena
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1195,7 +1195,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -100, y: -34.4}
-  m_SizeDelta: {x: 200, y: 65.399994}
+  m_SizeDelta: {x: 270, y: 65.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097589364
 MonoBehaviour:
@@ -1245,7 +1245,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Survival Arena
+          m_StringArgument: Plaza Escape
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

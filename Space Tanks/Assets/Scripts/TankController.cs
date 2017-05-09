@@ -73,11 +73,10 @@ public class TankController : MonoBehaviour, IDamageable
     private void FixedUpdate()
     {
         if (gameManager.IsPaused) return;
-        float moveDirection;
-        
-        moveDirection = Input.GetAxis("Vertical") * speed;
+        float moveMagnitude = Input.GetAxis("Vertical") * speed;
+        Vector3 moveForce = moveMagnitude * transform.forward;
 
-        rb.AddRelativeForce(0, 0, moveDirection);
+        rb.AddForce(moveForce.x, 0, moveForce.z);
         float turnDirection;
         turnDirection = Input.GetAxis("Horizontal") * turnSpeed;
         rb.AddRelativeTorque(0, turnDirection, 0);
