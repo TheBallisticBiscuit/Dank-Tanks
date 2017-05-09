@@ -37,6 +37,14 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
         animator.SetFloat("Speed", ai.desiredVelocity.magnitude);
 	}
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Death();
+        }
+    }
+
     [Task]
     private void Fire()
     {
@@ -117,13 +125,18 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
     {
         if (dying) return;
         hp -= amt;
-        Debug.Log("Robot damaged by " + amt);
-        if (hp <= 0) Death();
+        if (hp <= 0)
+        {
+            Death();
+            return;
+        }
         healthbar.UpdateBar(hp, startingHP);
     }
 
     public void Death()
     {
+        hp = 0;
+        healthbar.UpdateBar(hp, startingHP);
         dying = true;
         animator.enabled = false;
         ai.enabled = false;
