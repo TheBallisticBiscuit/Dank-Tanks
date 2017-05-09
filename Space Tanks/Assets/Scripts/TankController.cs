@@ -21,6 +21,7 @@ public class TankController : MonoBehaviour, IDamageable
     public float gravityModifier = 4;
     private GameManager gameManager;
     private UIManager ui;
+    private WheelCollider[] wheels;
 
     private bool onCooldown;
     private int hp;
@@ -34,6 +35,7 @@ public class TankController : MonoBehaviour, IDamageable
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        wheels = GetComponentsInChildren<WheelCollider>();
         onCooldown = false;
         hp = startingHP;
         gameManager = FindObjectOfType<GameManager>();
@@ -72,10 +74,11 @@ public class TankController : MonoBehaviour, IDamageable
     {
         if (gameManager.IsPaused) return;
         float moveDirection;
-        float turnDirection;
+        
         moveDirection = Input.GetAxis("Vertical") * speed;
-        rb.AddRelativeForce(0, 0, moveDirection);
 
+        rb.AddRelativeForce(0, 0, moveDirection);
+        float turnDirection;
         turnDirection = Input.GetAxis("Horizontal") * turnSpeed;
         rb.AddRelativeTorque(0, turnDirection * gravityModifier, 0);
         rb.AddForce(Physics.gravity * rb.mass*2 * gravityModifier);

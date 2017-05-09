@@ -12,6 +12,7 @@ tree("MoveToPlayer")
 	sequence
 		while 
 			fallback
+				not Wait 0.5
 				GetMissed
 				not PlayerInSight
 			sequence
