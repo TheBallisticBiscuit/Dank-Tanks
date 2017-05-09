@@ -53,7 +53,8 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
 
         // check if will miss
         RaycastHit hit;
-        if (Physics.Raycast(gunTip.position, gunTip.forward, out hit, sightRange))
+        Debug.DrawLine(gunTip.position, transform.forward * sightRange);
+        if (Physics.Raycast(gunTip.position, transform.forward, out hit, sightRange))
         {
             Debug.Log(hit.transform.gameObject);
             if (hit.transform.tag == "Player")
