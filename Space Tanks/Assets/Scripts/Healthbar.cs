@@ -7,15 +7,17 @@ public class Healthbar : MonoBehaviour {
     public RectTransform healthbar;
     private int maxHealth;
     private int currentHealth;
+    private Camera mainCam;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        mainCam = Camera.main;
     }
 
     void Update()
     {
-        transform.LookAt(Camera.main.transform);
+        transform.LookAt(mainCam.transform);
     }
 
     public void UpdateBar(int current, int max)
