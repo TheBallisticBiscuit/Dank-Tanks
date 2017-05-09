@@ -11,9 +11,11 @@ public class Spawnpoint : MonoBehaviour {
     private int spawnQueue = 0;
     public int SpawnQueue { get { return spawnQueue; } }
 
+    public List<GameObject> spawned;
+
 	// Use this for initialization
 	void Start () {
-		
+        Messenger.AddListener(GameEvent.DONE_SPAWNING, checkForClear);
 	}
 	
 	public void Spawn(GameObject toSpawn)
@@ -28,12 +30,45 @@ public class Spawnpoint : MonoBehaviour {
         {
             if(!Physics.CheckSphere(transform.position, detectionRadius))
             {
-                Instantiate(toSpawn, transform.position, transform.rotation);
+                spawned.Add(Instantiate(toSpawn, transform.position, transform.rotation) as GameObject);
                 spawnQueue--;
                 yield break;
             }
             yield return new WaitForSeconds(waitBetweenTries);
         }
         spawnQueue--;
+    }
+
+    private void OnDestroy()
+    {
+        Messenger.RemoveListener(GameEvent.DONE_SPAWNING, checkForClear);
+    }
+
+    private void checkForClear()
+    {
+        StartCoroutine(clearSpawnpoint());
+    }
+
+    private IEnumerator clearSpawnpoint()
+    {
+        while (true)
+        {
+            bool cleared = true;
+            foreach (GameObject enemy in spawned)
+            {
+                if (enemy)
+                {
+                    cleared = false;
+                }
+            }
+            if (cleared)
+            {
+                Messenger.Broadcast(GameEvent.SPAWNPOINT_CLEARED);
+                Debug.Log("Spawnpoint cleared!");
+                break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForEndOfFrame();
     }
 }

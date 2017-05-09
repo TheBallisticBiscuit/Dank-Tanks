@@ -11,11 +11,13 @@ public class PlazaEscapeSceneController : MonoBehaviour {
 
     private Spawnpoint[] firstAreaSpawnpoints;
     private Spawnpoint[] plazaSpawnpoints;
+    private int spawnpointsCleared = 0;
     private bool plazaEntered = false;
     // Use this for initialization
     void Start () {
         Messenger.AddListener(GameEvent.AREA_STARTED, SpawnInStartArea);
         Messenger.AddListener(GameEvent.PLAZA_REACHED, SpawnInPlazaArea);
+        Messenger.AddListener(GameEvent.SPAWNPOINT_CLEARED, clearSpawnpoint);
         firstAreaSpawnpoints = firstArea.GetComponentsInChildren<Spawnpoint>();
         plazaSpawnpoints = plaza.GetComponentsInChildren<Spawnpoint>();
         // for testing, spawn some at start
@@ -24,12 +26,16 @@ public class PlazaEscapeSceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(spawnpointsCleared == firstAreaSpawnpoints.Length + plazaSpawnpoints.Length)
+        {
+            Messenger.Broadcast(GameEvent.LEVEL_COMPLETE);
+        }
 	}
     private void OnDestroy()
     {
         Messenger.RemoveListener(GameEvent.AREA_STARTED, SpawnInStartArea);
         Messenger.RemoveListener(GameEvent.PLAZA_REACHED, SpawnInPlazaArea);
+        Messenger.RemoveListener(GameEvent.SPAWNPOINT_CLEARED, clearSpawnpoint);
     }
 
     private void SpawnInStartArea()
@@ -81,7 +87,7 @@ public class PlazaEscapeSceneController : MonoBehaviour {
                 s.Spawn(robotEnemy);
                 s.Spawn(robotEnemy);
             }
-            while (spawns < 5)
+            while (spawns < 3)
             {
                 yield return new WaitForSeconds(30f);
                 foreach (Spawnpoint s in plazaSpawnpoints)
@@ -92,7 +98,13 @@ public class PlazaEscapeSceneController : MonoBehaviour {
                 }
                 spawns++;
             }
+            Messenger.Broadcast(GameEvent.DONE_SPAWNING);
             plazaEntered = true;
         }
+    }
+
+    private void clearSpawnpoint()
+    {
+        spawnpointsCleared++;
     }
 }
