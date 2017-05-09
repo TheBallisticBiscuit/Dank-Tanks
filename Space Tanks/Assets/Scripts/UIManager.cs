@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public GameObject levelCompletePanel;
     public GameObject deathPanel;
     public GameObject hud;
+    public Text message;
 
     public RectTransform healthbar;
     private float healthbarWidth;
@@ -64,21 +65,13 @@ public class UIManager : MonoBehaviour {
                 ShowPauseMenu();
             }
         }
-
-        //if (screenFlash.enabled)
-        //{
-        //    if (screenFlashVisibility <= 0f)
-        //    {
-        //        screenFlash.enabled = false;
-        //        screenFlashVisibility = 0f;
-        //    }
-        //    Color temp = screenFlash.color;
-        //    temp.a = Mathf.Lerp(0, 0.2f, screenFlashVisibility);
-        //    screenFlash.color = temp;
-
-        //    screenFlashVisibility -= Time.deltaTime * 3;
-        //}
         
+    }
+
+    public void UpdateMessage(string msg)
+    {
+        message.gameObject.SetActive(true);
+        message.text = msg;
     }
 
     public void UpdateHealthbar(int current, int max)

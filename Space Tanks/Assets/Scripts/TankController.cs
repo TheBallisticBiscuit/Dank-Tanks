@@ -80,7 +80,7 @@ public class TankController : MonoBehaviour, IDamageable
         rb.AddRelativeForce(0, 0, moveDirection);
         float turnDirection;
         turnDirection = Input.GetAxis("Horizontal") * turnSpeed;
-        rb.AddRelativeTorque(0, turnDirection * gravityModifier, 0);
+        rb.AddRelativeTorque(0, turnDirection, 0);
         rb.AddForce(Physics.gravity * rb.mass*2 * gravityModifier);
     }
 
@@ -132,6 +132,7 @@ public class TankController : MonoBehaviour, IDamageable
     public void Death()
     {
         hp = 0;
+        Messenger.Broadcast(GameEvent.PLAYER_DEATH);
     }
 
     public int HP

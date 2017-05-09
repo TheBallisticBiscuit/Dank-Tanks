@@ -1,5 +1,4 @@
-﻿using Panda;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -79,7 +78,6 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
         }
     }
 
-    [Task]
     private void Fire()
     {
         ai.ResetPath();
