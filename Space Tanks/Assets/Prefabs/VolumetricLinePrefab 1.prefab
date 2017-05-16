@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  damage: 5
+  fwd: {x: 0, y: 0, z: 0}
+  drop: 0.1
   explosion: {fileID: 1611069861969846, guid: 595525c2246b0f746a01073f65697dbf, type: 2}
 --- !u!114 &114983547762311648
 MonoBehaviour:

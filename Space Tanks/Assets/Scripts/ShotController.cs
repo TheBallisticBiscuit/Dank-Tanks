@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShotController : MonoBehaviour {
     public float speed = 10f;
     public Vector3 fwd;
+    public float drop = 0.5f;
     
     public GameObject explosion;
 
@@ -23,7 +24,7 @@ public class ShotController : MonoBehaviour {
         transform.forward = ((transform.position + fwd * Time.deltaTime * speed) - transform.position).normalized;
         transform.position += fwd * Time.deltaTime * speed;//transform.forward * Time.deltaTime * speed;
 
-        GetComponent<Rigidbody>().AddForce(Physics.gravity * GetComponent<Rigidbody>().mass);
+        GetComponent<Rigidbody>().AddForce(Physics.gravity * GetComponent<Rigidbody>().mass * drop);
     }
 
     private void OnTriggerEnter(Collider other)

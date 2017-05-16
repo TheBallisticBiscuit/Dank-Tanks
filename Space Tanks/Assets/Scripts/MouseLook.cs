@@ -21,7 +21,8 @@ public class MouseLook : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (gameManager.IsPaused) return;
-        rotationX -= Input.GetAxis ("Mouse Y") * sensitivityY * Time.deltaTime;
+        float rotationXdelta = Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
+        rotationX -= Mathf.Clamp(rotationXdelta, -maxRotationSpeed, maxRotationSpeed);
 		rotationX = Mathf.Clamp (rotationX, minimumVertical, maximumVertical);
 
 		float tmp = Input.GetAxis ("Mouse X") * sensitivityX * Time.deltaTime + overflowDelta/1.4f;
