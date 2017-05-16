@@ -8,6 +8,7 @@ public class PlazaEscapeSceneController : MonoBehaviour {
     public GameObject plaza;
     public GameObject robotEnemy;
     public Spawnpoint initialSpawn;
+    public ParticleSystem endLevelParticles;
 
     private Spawnpoint[] firstAreaSpawnpoints;
     private Spawnpoint[] plazaSpawnpoints;
@@ -26,9 +27,11 @@ public class PlazaEscapeSceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(spawnpointsCleared == firstAreaSpawnpoints.Length + plazaSpawnpoints.Length)
+		if(spawnpointsCleared == firstAreaSpawnpoints.Length + plazaSpawnpoints.Length + 1)
         {
             Messenger.Broadcast(GameEvent.PLAZA_CLEARED);
+            FindObjectOfType<UIManager>().UpdateMessage("Plaza Cleared, Get To Extraction!");
+            endLevelParticles.Play();
         }
 	}
     private void OnDestroy()
@@ -89,7 +92,7 @@ public class PlazaEscapeSceneController : MonoBehaviour {
             }
             while (spawns < 3)
             {
-                yield return new WaitForSeconds(30f);
+                yield return new WaitForSeconds(20f);
                 foreach (Spawnpoint s in plazaSpawnpoints)
                 {
                     s.Spawn(robotEnemy);
@@ -106,6 +109,5 @@ public class PlazaEscapeSceneController : MonoBehaviour {
     private void clearSpawnpoint()
     {
         spawnpointsCleared++;
-        Debug.Log("Spawn point cleared, total cleared = " + spawnpointsCleared);
     }
 }

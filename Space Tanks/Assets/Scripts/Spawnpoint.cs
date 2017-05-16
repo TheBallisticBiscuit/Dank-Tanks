@@ -69,6 +69,14 @@ public class Spawnpoint : MonoBehaviour
             if (spawned.Count == 0)
             {
                 Messenger.Broadcast(GameEvent.SPAWNPOINT_CLEARED);
+                if (!cleared)
+                {
+                    Debug.Log("Spawnpoint cleared!");
+                }
+                else
+                {
+                    Debug.Log("error...");
+                }
                 cleared = true;
                 break;
             }

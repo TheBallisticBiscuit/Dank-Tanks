@@ -34,6 +34,5 @@ public class Goal : MonoBehaviour {
 
     void AllowEscape() {
         CanComplete = true;
-        Debug.Log("Got Plaza Cleared");
     }
 }
