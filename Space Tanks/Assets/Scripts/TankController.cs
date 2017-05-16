@@ -33,7 +33,7 @@ public class TankController : MonoBehaviour, IDamageable
     private Vector3 recoilEndPos;
 
     private AudioSource aud;
-
+    private AudioSource fireCannon;
     private float recoilTime = 5;
 
     // Use this for initialization
@@ -46,6 +46,7 @@ public class TankController : MonoBehaviour, IDamageable
         gameManager = FindObjectOfType<GameManager>();
         ui = FindObjectOfType<UIManager>();
         aud = GetComponent<AudioSource>();
+        fireCannon = GetComponents<AudioSource>()[1];
         startingTurretPosition = turret.transform.localPosition;
     }
 
@@ -108,6 +109,7 @@ public class TankController : MonoBehaviour, IDamageable
                 if (!i.isPlaying)
                 {
                     i.Play();
+                    fireCannon.Play();
                 }
             }
             yield return new WaitForSeconds(1.5f);
@@ -131,7 +133,7 @@ public class TankController : MonoBehaviour, IDamageable
     }
     private IEnumerator CannonCooldown()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.7f);
         onCooldown = false;
     }
 

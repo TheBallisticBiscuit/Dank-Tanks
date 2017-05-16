@@ -20,6 +20,7 @@ public class Explosion : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        GetComponent<AudioSource>().Play();
         minSize = transform.localScale.x;
         foreach (Collider col in Physics.OverlapSphere(transform.position, radius))
         {
