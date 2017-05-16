@@ -19,6 +19,7 @@ public class TankController : MonoBehaviour, IDamageable
     public float recoilRecoveryTime = 1.5f;
     public float recoilDelayTime = .25f;
     public float gravityModifier = 4;
+    public float velocityLerp = 0.3f;
     private GameManager gameManager;
     private UIManager ui;
     private WheelCollider[] wheels;
@@ -73,6 +74,9 @@ public class TankController : MonoBehaviour, IDamageable
     private void FixedUpdate()
     {
         if (gameManager.IsPaused) return;
+
+        rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, velocityLerp);
+
         float moveMagnitude = Input.GetAxis("Vertical") * speed;
         Vector3 moveForce = moveMagnitude * transform.forward;
 

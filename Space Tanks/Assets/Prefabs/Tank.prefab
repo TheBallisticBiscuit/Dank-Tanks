@@ -654,7 +654,7 @@ Rigidbody:
   m_GameObject: {fileID: 1413517068609486}
   serializedVersion: 2
   m_Mass: 500
-  m_Drag: 10
+  m_Drag: 0.5
   m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -671,8 +671,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 11.5, z: 38}
-  m_Center: {x: 0, y: 12.3, z: 0}
+  m_Size: {x: 20, y: 11.5, z: 38.54}
+  m_Center: {x: 0, y: 12.3, z: 0.7}
 --- !u!81 &81073606971290354
 AudioListener:
   m_ObjectHideFlags: 1
@@ -733,6 +733,7 @@ MonoBehaviour:
   recoilRecoveryTime: 1
   recoilDelayTime: 0.1
   gravityModifier: 2
+  velocityLerp: 0.2
 --- !u!124 &124138009433084028
 Behaviour:
   m_ObjectHideFlags: 1
