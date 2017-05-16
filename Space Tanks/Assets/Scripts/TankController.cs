@@ -111,9 +111,10 @@ public class TankController : MonoBehaviour, IDamageable
             }
             recoilTime = 0;
             recoilStartPos = startingTurretPosition;
-            recoilEndPos = -turret.transform.forward;
+            recoilEndPos = turret.transform.forward;
             //recoilEndPos.y = 0;
-            recoilEndPos = recoilStartPos - (recoilEndPos.normalized * 4);
+            
+            recoilEndPos = startingTurretPosition - (transform.InverseTransformDirection(turret.transform.forward) * 4);
         }
         else
         {
