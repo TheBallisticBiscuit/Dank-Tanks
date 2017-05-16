@@ -53,22 +53,18 @@ public class Spawnpoint : MonoBehaviour {
     {
         while (true)
         {
-            bool cleared = true;
-            foreach (GameObject enemy in spawned)
+            yield return new WaitForSeconds(1.0f);
+            spawned.RemoveAll(null);
+            bool cleared = false;
+            if (spawned.Count == 0)
             {
-                if (enemy)
-                {
-                    cleared = false;
-                }
+                    cleared = true;
             }
             if (cleared)
             {
                 Messenger.Broadcast(GameEvent.SPAWNPOINT_CLEARED);
-                Debug.Log("Spawnpoint cleared!");
                 break;
             }
-            yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
     }
 }
