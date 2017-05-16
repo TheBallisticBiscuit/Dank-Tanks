@@ -15,6 +15,7 @@ public class TankController : MonoBehaviour, IDamageable
     public Transform[] cannonBarrelPoints;
     public GameObject cannonShotPrefab;
     public GameObject turret;
+    
     public float recoilKnockbackTime = .5f;
     public float recoilRecoveryTime = 1.5f;
     public float recoilDelayTime = .25f;
@@ -31,6 +32,8 @@ public class TankController : MonoBehaviour, IDamageable
     private Vector3 recoilStartPos;
     private Vector3 recoilEndPos;
 
+    private AudioSource aud;
+
     private float recoilTime = 5;
 
     // Use this for initialization
@@ -42,6 +45,7 @@ public class TankController : MonoBehaviour, IDamageable
         hp = startingHP;
         gameManager = FindObjectOfType<GameManager>();
         ui = FindObjectOfType<UIManager>();
+        aud = GetComponent<AudioSource>();
         startingTurretPosition = turret.transform.localPosition;
     }
 
@@ -54,6 +58,10 @@ public class TankController : MonoBehaviour, IDamageable
         {
             StartCoroutine(FireCannon());
         }
+
+        if (!aud.isPlaying) aud.Play();
+
+        aud.pitch = Mathf.Lerp(0.7f, 1f, Mathf.Abs(Input.GetAxis("Vertical")));
 
         if (recoilTime < recoilKnockbackTime + recoilDelayTime + recoilRecoveryTime)
             recoilTime += Time.deltaTime;
