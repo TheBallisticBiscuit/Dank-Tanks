@@ -1,0 +1,77 @@
+# Blender MTL File: 'untitled1.blend'
+# Material Count: 7
+
+newmtl CargoHold04_MIC
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd CargoHold04_D.jpg
+map_Ka CargoHold04_D.jpg
+
+newmtl DropShip01_MIC
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd DropShip01_D.jpg
+map_Ka DropShip01_D.jpg
+
+newmtl DropShip02_MIC
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd DropShip02_D.jpg
+map_Ka DropShip02_D.jpg
+
+newmtl DropShip03_MIC
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Dropship03_D.jpg
+map_Ka Dropship03_D.jpg
+
+newmtl DropShip04_MIC
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Dropship04_D.jpg
+map_Ka Dropship04_D.jpg
+
+newmtl DropshipGlass
+Ns 7.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.470400 0.470400 0.470400
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd WindowGlass_Opt_D.tga
+map_Ka WindowGlass_Opt_D.tga
+
+newmtl wire_174186203
+Ns 29.411765
+Ka 0.000000 0.000000 0.000000
+Kd 0.545882 0.583530 0.636863
+Ks 0.350000 0.350000 0.350000
+Ni 1.000000
+d 1.000000
+illum 2
