@@ -106,5 +106,6 @@ public class PlazaEscapeSceneController : MonoBehaviour {
     private void clearSpawnpoint()
     {
         spawnpointsCleared++;
+        Debug.Log("Spawn point cleared, total cleared = " + spawnpointsCleared);
     }
 }
