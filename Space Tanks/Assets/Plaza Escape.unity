@@ -8508,6 +8508,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 10093aa5db5a8aa4ba6108805e46df6b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10093aa5db5a8aa4ba6108805e46df6b, type: 3}
   m_IsPrefabParent: 0
@@ -16849,8 +16853,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1788076307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11, y: 0, z: -1536}
-  m_LocalScale: {x: 486.1431, y: 300.0001, z: 442.44302}
+  m_LocalPosition: {x: 130, y: 0, z: -1667}
+  m_LocalScale: {x: 204.38367, y: 300.0001, z: 334.1113}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
