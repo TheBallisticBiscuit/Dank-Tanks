@@ -12,6 +12,7 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
     public Transform head;
     public GameObject projectile;
     public Healthbar healthbar;
+    public AudioSource bulletSound;
 
     public int HP { get { return hp; } }
 
@@ -82,6 +83,7 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
         ai.ResetPath();
         animator.SetBool("Moving", false);
         animator.SetBool("Firing", true);
+        bulletSound.Play();
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Base.Firing") || animator.IsInTransition(0))
         {
             state = AIState.None;
