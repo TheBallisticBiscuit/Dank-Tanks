@@ -27,6 +27,7 @@ public class TankController : MonoBehaviour, IDamageable
     private bool onCooldown;
     private int hp;
 
+    private Vector3 startingTurretPosition;
     private Vector3 recoilStartPos;
     private Vector3 recoilEndPos;
 
@@ -41,6 +42,7 @@ public class TankController : MonoBehaviour, IDamageable
         hp = startingHP;
         gameManager = FindObjectOfType<GameManager>();
         ui = FindObjectOfType<UIManager>();
+        startingTurretPosition = turret.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -108,8 +110,8 @@ public class TankController : MonoBehaviour, IDamageable
                 Destroy(shot, 3.0f);
             }
             recoilTime = 0;
-            recoilStartPos = Vector3.zero;
-            recoilEndPos = turret.transform.forward;
+            recoilStartPos = startingTurretPosition;
+            recoilEndPos = -turret.transform.forward;
             //recoilEndPos.y = 0;
             recoilEndPos = recoilStartPos - (recoilEndPos.normalized * 4);
         }

@@ -19,7 +19,7 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
     private int hp;
     private NavMeshAgent ai;
     private Transform playerTarget;
-    private bool dying = false;
+    public bool dying { get; set; }
     private bool missed = false;
     private TankController tank;
     enum AIState {MoveToPlayer, Attack, None };
@@ -30,13 +30,12 @@ public class RobotEnemyController : MonoBehaviour, IDamageable, IShotInformation
 	// Use this for initialization
 	void Start () {
         hp = startingHP;
+        dying = false;
         ai = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         playerTarget = GameObject.FindGameObjectWithTag("PlayerTarget").transform;
         healthbar.UpdateBar(hp, startingHP);
         tank = FindObjectOfType<TankController>();
-        //StartCoroutine(Determine());
-
     }
 	
 	// Update is called once per frame
