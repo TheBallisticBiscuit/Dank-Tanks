@@ -28,7 +28,7 @@ public class PlazaEscapeSceneController : MonoBehaviour {
 	void Update () {
 		if(spawnpointsCleared == firstAreaSpawnpoints.Length + plazaSpawnpoints.Length)
         {
-            Messenger.Broadcast(GameEvent.LEVEL_COMPLETE);
+            Messenger.Broadcast(GameEvent.PLAZA_CLEARED);
         }
 	}
     private void OnDestroy()
