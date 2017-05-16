@@ -653,7 +653,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413517068609486}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 5000
   m_Drag: 0.5
   m_AngularDrag: 10
   m_UseGravity: 1
@@ -717,8 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 100
-  speed: 200000
-  turnSpeed: 800000
+  speed: 100
+  turnSpeed: 15
   damage: 5
   fireParticles:
   - {fileID: 198537891070643982}
@@ -732,8 +732,8 @@ MonoBehaviour:
   recoilKnockbackTime: 0.2
   recoilRecoveryTime: 1
   recoilDelayTime: 0.1
-  gravityModifier: 2
-  velocityLerp: 0.2
+  gravityModifier: 1
+  velocityDamper: 0.95
 --- !u!124 &124138009433084028
 Behaviour:
   m_ObjectHideFlags: 1

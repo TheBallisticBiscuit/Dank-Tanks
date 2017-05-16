@@ -8032,12 +8032,12 @@ Prefab:
     - target: {fileID: 114294236082923076, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
       propertyPath: speed
-      value: 65000
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 114294236082923076, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
       propertyPath: turnSpeed
-      value: 70000
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4048350457466628, guid: 6e4283a8b86f2a64e8e8533350214c4d, type: 2}
       propertyPath: m_LocalScale.x
@@ -8171,23 +8171,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 54494747200416758, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
-      propertyPath: m_Mass
-      value: 500
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114294236082923076, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
       propertyPath: gravityModifier
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54494747200416758, guid: 6e4283a8b86f2a64e8e8533350214c4d,
+    - target: {fileID: 114294236082923076, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
-      propertyPath: m_Drag
-      value: 10
+      propertyPath: velocityDamper
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014989189922868, guid: 6e4283a8b86f2a64e8e8533350214c4d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 54494747200416758, guid: 6e4283a8b86f2a64e8e8533350214c4d,
         type: 2}
-      propertyPath: m_Constraints
-      value: 0
+      propertyPath: m_AngularDrag
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e4283a8b86f2a64e8e8533350214c4d, type: 2}

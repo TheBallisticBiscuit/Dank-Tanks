@@ -19,7 +19,7 @@ public class TankController : MonoBehaviour, IDamageable
     public float recoilRecoveryTime = 1.5f;
     public float recoilDelayTime = .25f;
     public float gravityModifier = 4;
-    public float velocityLerp = 0.3f;
+    public float velocityDamper = 0.9f;
     private GameManager gameManager;
     private UIManager ui;
     private WheelCollider[] wheels;
@@ -75,16 +75,16 @@ public class TankController : MonoBehaviour, IDamageable
     {
         if (gameManager.IsPaused) return;
 
-        rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, velocityLerp);
+        rb.velocity = rb.velocity * velocityDamper;
 
         float moveMagnitude = Input.GetAxis("Vertical") * speed;
         Vector3 moveForce = moveMagnitude * transform.forward;
 
-        rb.AddForce(moveForce.x, 0, moveForce.z);
+        rb.AddForce(moveForce, ForceMode.Acceleration);
         float turnDirection;
         turnDirection = Input.GetAxis("Horizontal") * turnSpeed;
-        rb.AddRelativeTorque(0, turnDirection, 0);
-        rb.AddForce(Physics.gravity * rb.mass*2 * gravityModifier);
+        rb.AddRelativeTorque(0, turnDirection, 0, ForceMode.Acceleration);
+        rb.AddForce(Physics.gravity * gravityModifier, ForceMode.Acceleration);
     }
 
     private IEnumerator FireCannon()
